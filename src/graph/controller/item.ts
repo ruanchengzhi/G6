@@ -227,7 +227,7 @@ export default class ItemController {
     if (type === NODE) {
       // 若移除的是节点，需要将与之相连的边一同删除
       const edges = (item as INode).getEdges();
-      debugger
+
       for (let i = edges.length; i >= 0; i--) {
         graph.removeItem(edges[i]);
       }
@@ -268,7 +268,7 @@ export default class ItemController {
    * @param {string[]} states 状态名称集合
    * @memberof ItemController
    */
-  public clearItemStates(item: Item | string, states: string[]): void {
+  public clearItemStates(item: Item | string, states: string | string[]): void {
     const graph = this.graph;
 
     if (isString(item)) {
